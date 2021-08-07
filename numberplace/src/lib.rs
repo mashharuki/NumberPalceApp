@@ -40,7 +40,7 @@ fn is_valid(result: [u8; N], p: usize, v: u8) -> bool {
  * 問題を解くための関数
  */
 #[wasm_bindgen]
-pub fn solve(problem: Vec<u8>) -> Vec<u8> {
+pub fn solve(problem: Vec<u8>) {
     // さらなる関数の呼び出し
     solve_innner(problem);
 }
@@ -101,7 +101,7 @@ fn solve_innner(problem: Vec<u8>) -> Vec<u8> {
         }
     }
     // wasmに対応したVec型に変換する。
-    result.to_vec();
+    return result.to_vec();
 }
 
 /**
